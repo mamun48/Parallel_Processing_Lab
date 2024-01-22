@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "g:/MPI",
-      "program": "g:/MPI/build/Debug/outDebug",
+      "cwd": "g:/Prallel_Lab/MPI",
+      "program": "g:/Prallel_Lab/MPI/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
