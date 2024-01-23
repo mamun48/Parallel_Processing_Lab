@@ -3,9 +3,6 @@
 
 using namespace std;
 
-//... To compile: mpic++ phonebook-search.cpp -o phonebook-search
-//... To run: mpirun -n 4 ./phonebook-search phonebook1.txt phonebook2.txt
-
 void send_string(string text, int receiver)
 {
     int length = text.size() + 1;
@@ -46,10 +43,7 @@ vector<string> string_to_vector(string text)
 
 bool check(string &name, string &number, string &searchName, int rank)
 {
-    // if (name.size() != searchName.size())
-    // {
-    //     return false;
-    // }
+
     for (int i = 0; i < searchName.size(); i++)
     {
         if (name[i] != searchName[i])
@@ -57,7 +51,6 @@ bool check(string &name, string &number, string &searchName, int rank)
             return false;
         }
     }
-    // cout<<name<<" "<<number<<" found by process "<<rank<<endl;
     // printf("%s %s found by process %d.\n", name.c_str(), number.c_str(), rank);
     return true;
 }
@@ -123,7 +116,6 @@ int main(int argc, char **argv)
             if (isMatched)
             {
                 ultimateResult[names[i]] = phone_numbers[i];
-                // ultimateResult.push_back({names[i], phone_numbers[i]});
             }
         }
     }
@@ -164,9 +156,8 @@ int main(int argc, char **argv)
         while (ss1 >> word1 && ss2 >> word2)
         {
             ultimateResult[word1] = word2;
-            // ultimateResult.push_back({word1, word2});
         }
-        // sort(ultimateResult.begin(), ultimateResult.end());
+
         for (auto [key, val] : ultimateResult)
         {
             cout << key << " -> " << val << endl;
